@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Артём Трубин</title>
+	<link rel="stylesheet" href="/source/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,900&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body onload="goSlider()">
+	<div class="wrapper">
+		<div id="main">
+			<div class="logo">
+
+			</div>
+			<div class="name">
+				Артём Трубин
+			</div>
+			<div class="dottedline"></div>
+			<div class="slidegroup">
+				<div id="slider">
+					дизайнер
+				</div>
+			</div>
+			<div class="dottedline"></div>
+			<a target="_blank" class="city" href="https://www.google.com/maps/place/%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.401699,30.252512,10z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf4ee15a4505:0x764931d2170146fe!8m2!3d50.4501!4d30.5234">
+				Украина, Киев
+			</a>
+			<div class="info">
+				<div class="question">
+					Образование:
+				</div>
+				<a target="_blank" class="answer" href="https://nau.edu.ua/">
+					Национальный авиационный университет
+				</a>
+				<div class="question">
+					Специальность:
+				</div>
+				<div class="answer">
+					Компьютерная инженерия
+				</div>
+				<div class="question">
+					Языки:
+				</div>
+				<div class="answer">
+					Русский, Украинский, Английский
+				</div>
+			</div>
+			<div class="email">
+				trubinforwork@gmail.com
+			</div>
+			<ul class="buttons">
+				<li class="button Telegram">
+					<a target="_blank" href="https://t.me/yaripey">
+						<img src="/source/img/telegram-logo.png" alt="Telegram">
+					</a>
+				</li>
+				<li class="button Twitter">
+					<a target="_blank" href="https://twitter.com/yaripey">
+						<img src="/source/img/twitter-logo.png" alt="Twitter">
+					</a>
+				</li>
+				<li class="button Portfolio">
+					<a target="_blank" href="">
+						<img src="/source/img/portfolio-logo.png" alt="Portfolio">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		counter = 0
+		strings = ["дизайнер", "программист", "студент", "верстальщик", "разработчик", "геймер"]
+		function goSlider(){
+			setTimeout(function() {
+				document.getElementById("main").style.top = "20%";
+				document.getElementById("main").style.opacity = 1;
+			}, 200)
+
+			console.log("he")
+			setInterval(function() {
+				setTimeout(function() {
+					document.getElementById("slider").style.left = "30px";
+					document.getElementById("slider").style.opacity = 0;
+				}, 100);
+				setTimeout(function() {
+					document.getElementById("slider").innerHTML = strings[counter];
+					document.getElementById("slider").style.left = "-30px";
+				}, 250);
+				setTimeout(function() {
+					document.getElementById("slider").style.left = "0px";
+					document.getElementById("slider").style.opacity = 1;
+				}, 400);
+				counter++;
+				if (counter >= strings.length) {
+					counter = 0;
+				};
+			}, 2000);
+		};
+	</script>
+</body>
+</html>
